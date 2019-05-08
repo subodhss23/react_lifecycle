@@ -9,11 +9,14 @@ class Timer extends Component{
 
     componentDidMount(){
         console.log('In Component did mount')
+        this.timerID = setInterval(() =>{
+            this.setState({time: new Date()})
+        }, 1000)
     }
 
     render(){
         console.log('In render');
-        return (<h1>TIME</h1>)
+        return (<h1>{this.state.time.getSeconds()}</h1>)
     }
 }
 
